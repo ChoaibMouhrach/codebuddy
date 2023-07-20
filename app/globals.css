@@ -3,127 +3,127 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 222.2 84% 4.9%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+		--muted: 210 40% 96.1%;
+		--muted-foreground: 215.4 16.3% 46.9%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 222.2 84% 4.9%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+		--card: 0 0% 100%;
+		--card-foreground: 222.2 84% 4.9%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+		--border: 214.3 31.8% 91.4%;
+		--input: 214.3 31.8% 91.4%;
 
-    --primary-900: 251 85.6% 24.5%;
-    --primary-800: 252 79.5% 30.6%;
-    --primary-700: 254 74.9% 39%;
-    --primary-600: 256 69.8% 48%;
-    --primary-500: 258 88% 57.5%;
-    --primary-400: 260 90.2% 68%;
-    --primary-300: 261 93.7% 75.1%;
-    --primary-200: 268 95.1% 92%;
-    --primary-100: 267 100% 96.1%;
-    --primary-50: 264 100% 98%;
-    --primary-25: 264 100% 99%;
+		--primary-900: 251 85.6% 24.5%;
+		--primary-800: 252 79.5% 30.6%;
+		--primary-700: 254 74.9% 39%;
+		--primary-600: 256 69.8% 48%;
+		--primary-500: 258 88% 57.5%;
+		--primary-400: 260 90.2% 68%;
+		--primary-300: 261 93.7% 75.1%;
+		--primary-200: 268 95.1% 92%;
+		--primary-100: 267 100% 96.1%;
+		--primary-50: 264 100% 98%;
+		--primary-25: 264 100% 99%;
 
-    --success-900: 156 88.1% 16.5%;
-    --success-800: 155 90.1% 19.8%;
-    --success-700: 155 96.8% 24.3%;
-    --success-600: 153 96.1% 30.4%;
-    --success-500: 152 82.1% 39.4%;
-    --success-400: 150 66% 51.6%;
-    --success-300: 148 74% 66.9%;
-    --success-200: 144 78% 80.4%;
-    --success-100: 140 80.4% 90%;
-    --success-50: 145 81% 95.9%;
-    --success-25: 142 80% 98%;
+		--success-900: 156 88.1% 16.5%;
+		--success-800: 155 90.1% 19.8%;
+		--success-700: 155 96.8% 24.3%;
+		--success-600: 153 96.1% 30.4%;
+		--success-500: 152 82.1% 39.4%;
+		--success-400: 150 66% 51.6%;
+		--success-300: 148 74% 66.9%;
+		--success-200: 144 78% 80.4%;
+		--success-100: 140 80.4% 90%;
+		--success-50: 145 81% 95.9%;
+		--success-25: 142 80% 98%;
 
-    --info-900: 218 68.4% 31%;
-    --info-800: 201 91.4% 27.5%;
-    --info-700: 201 97.6% 32.2%;
-    --info-600: 200 100% 39.4%;
-    --info-500: 199 91.1% 48.4%;
-    --info-400: 198 95.1% 59.6%;
-    --info-300: 199 97% 73.9%;
-    --info-200: 201 97.2% 86.1%;
-    --info-100: 204 93.8% 93.7%;
-    --info-50: 204 100% 97.1%;
-    --info-25: 204 100% 98%;
+		--info-900: 218 68.4% 31%;
+		--info-800: 201 91.4% 27.5%;
+		--info-700: 201 97.6% 32.2%;
+		--info-600: 200 100% 39.4%;
+		--info-500: 199 91.1% 48.4%;
+		--info-400: 198 95.1% 59.6%;
+		--info-300: 199 97% 73.9%;
+		--info-200: 201 97.2% 86.1%;
+		--info-100: 204 93.8% 93.7%;
+		--info-50: 204 100% 97.1%;
+		--info-25: 204 100% 98%;
 
-    --warning-900: 18 80.6% 26.3%;
-    --warning-800: 19 83.7% 31.4%;
-    --warning-700: 22 91.5% 37.1%;
-    --warning-600: 28 97.3% 43.7%;
-    --warning-500: 34 93.7% 50.2%;
-    --warning-400: 39 98.2% 56.3%;
-    --warning-300: 42 98.9% 64.5%;
-    --warning-200: 44 98.3% 76.7%;
-    --warning-100: 45 96.5% 88.8%;
-    --warning-50: 45 100% 96.1%;
-    --warning-25: 42 100% 98%;
+		--warning-900: 18 80.6% 26.3%;
+		--warning-800: 19 83.7% 31.4%;
+		--warning-700: 22 91.5% 37.1%;
+		--warning-600: 28 97.3% 43.7%;
+		--warning-500: 34 93.7% 50.2%;
+		--warning-400: 39 98.2% 56.3%;
+		--warning-300: 42 98.9% 64.5%;
+		--warning-200: 44 98.3% 76.7%;
+		--warning-100: 45 96.5% 88.8%;
+		--warning-50: 45 100% 96.1%;
+		--warning-25: 42 100% 98%;
 
-    --danger-900: 8 64.9% 29%;
-    --danger-800: 4 71.6% 33.1%;
-    --danger-700: 4 76.5% 40%;
-    --danger-600: 4 74.3% 48.8%;
-    --danger-500: 4 86% 58%;
-    --danger-400: 4 92.5% 68.8%;
-    --danger-300: 4 96.1% 80%;
-    --danger-200: 3 96.3% 89.4%;
-    --danger-100: 4 93.3% 94.1%;
-    --danger-50: 5 85.7% 97.3%;
-    --danger-25: 12 100% 99%;
+		--danger-900: 8 64.9% 29%;
+		--danger-800: 4 71.6% 33.1%;
+		--danger-700: 4 76.5% 40%;
+		--danger-600: 4 74.3% 48.8%;
+		--danger-500: 4 86% 58%;
+		--danger-400: 4 92.5% 68.8%;
+		--danger-300: 4 96.1% 80%;
+		--danger-200: 3 96.3% 89.4%;
+		--danger-100: 4 93.3% 94.1%;
+		--danger-50: 5 85.7% 97.3%;
+		--danger-25: 12 100% 99%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+		--accent: 210 40% 96.1%;
+		--accent-foreground: 222.2 47.4% 11.2%;
 
-    --ring: 215 20.2% 65.1%;
+		--ring: 215 20.2% 65.1%;
 
-    --radius: 0.5rem;
-  }
+		--radius: 0.5rem;
+	}
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+	.dark {
+		--background: 222.2 84% 4.9%;
+		--foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+		--muted: 217.2 32.6% 17.5%;
+		--muted-foreground: 215 20.2% 65.1%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+		--popover: 222.2 84% 4.9%;
+		--popover-foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+		--card: 222.2 84% 4.9%;
+		--card-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+		--border: 217.2 32.6% 17.5%;
+		--input: 217.2 32.6% 17.5%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+		--primary: 210 40% 98%;
+		--primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+		--secondary: 217.2 32.6% 17.5%;
+		--secondary-foreground: 210 40% 98%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+		--accent: 217.2 32.6% 17.5%;
+		--accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 85.7% 97.3%;
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 0 85.7% 97.3%;
 
-    --ring: 217.2 32.6% 17.5%;
-  }
+		--ring: 217.2 32.6% 17.5%;
+	}
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
 }
