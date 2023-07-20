@@ -18,7 +18,7 @@ CodeBuddy utilizes the following technologies:
 - **Tailwind CSS:** Tailwind CSS is used as the styling framework, allowing for rapid development and easy customization through utility classes.
 - **Other Dependencies:** The project incorporates various additional dependencies such as Axios for API calls, react hook form for form handling, and React Query for managing data fetching and caching.
 
-## Getting Started
+# Getting Started
 
 To run CodeBuddy locally on your machine, follow these steps:
 
