@@ -1,7 +1,6 @@
 import {
 	GitFork,
 	MessagesSquare,
-	LayoutDashboard,
 	Wrench,
 	Lock,
 	Server,
@@ -62,7 +61,7 @@ const Features = () => {
 					return (
 						<div
 							className={cn(
-								'relative space-x-3 px-9 pb-8 pt-6 duration-500 ease-linear',
+								'relative px-9 pb-8 pt-6 duration-500 ease-linear',
 								styles['features-card'],
 							)}
 							key={key}
@@ -76,7 +75,7 @@ const Features = () => {
 					)
 				})}
 			</div>
-			<div className={cn('hidden md:block', styles['features-gridlines'])}>
+			<div className={cn(styles['features-gridlines'], '!hidden md:!flex')}>
 				<div />
 				<div />
 				<div />
