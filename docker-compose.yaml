@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  codebuddy:
+    build: .
+    image: codebuddy
+    ports:
+      - 3000:3000
+    restart: always
+
+volumes:
+  app:
