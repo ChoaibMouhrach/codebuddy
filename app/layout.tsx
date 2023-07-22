@@ -1,8 +1,8 @@
+import { inter, satoshi } from '@/styles/fonts'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import { cn } from '@/lib/utils'
+import Background from '@/components/home/background'
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -16,7 +16,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>{children}</body>
+			<body className={cn(satoshi.variable, inter.variable)}>
+				{children}
+				<Background />
+			</body>
 		</html>
 	)
 }
