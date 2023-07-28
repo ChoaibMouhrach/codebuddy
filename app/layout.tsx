@@ -1,20 +1,19 @@
 import { inter, satoshi } from '@/styles/fonts'
 import './globals.css'
 import { cn } from '@/lib/utils'
-import Background from '@/components/home/background'
+import NextProgressBar from '@/components/custom/next-progress-bar'
 
+interface LayoutProps {
+  children: React.ReactNode
+}
 
-export default function RootLayout({
-	children,
-}: {
-	children: React.ReactNode
-}) {
-	return (
-		<html lang="en">
-			<body className={cn(satoshi.variable, inter.variable)}>
-				{children}
-				<Background />
-			</body>
-		</html>
-	)
+export default function RootLayout({ children }: LayoutProps) {
+  return (
+    <html lang="en" className="dark" >
+      <body className={cn(satoshi.variable, inter.variable)}>
+        <NextProgressBar />
+        {children}
+      </body>
+    </html>
+  )
 }
