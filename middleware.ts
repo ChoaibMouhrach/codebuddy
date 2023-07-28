@@ -1,30 +1,38 @@
 import { getToken } from 'next-auth/jwt'
-import { NextMiddleware, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
+import { withAuth } from 'next-auth/middleware'
 
-export const middleware: NextMiddleware = async req => {
-	const isAuth = Boolean(await getToken({ req }))
-	const isAuthPage = ['/sign-in', '/sign-up'].includes(req.nextUrl.pathname)
+export default withAuth(
+	async req => {
+		const isAuth = Boolean(await getToken({ req }))
+		const isAuthPage = ['/sign-in', '/sign-up'].includes(req.nextUrl.pathname)
 
-	if (isAuthPage) {
-		if (isAuth) {
-			return NextResponse.redirect(new URL('/dashboard', req.url))
+		if (isAuthPage) {
+			if (isAuth) {
+				return NextResponse.redirect(new URL('/dashboard', req.url))
+			}
+
+			return null
 		}
 
-		return null
-	}
+		if (!isAuth) {
+			let from = req.nextUrl.pathname
 
-	if (!isAuth) {
-		let from = req.nextUrl.pathname
+			if (req.nextUrl.search) {
+				from += req.nextUrl.search
+			}
 
-		if (req.nextUrl.search) {
-			from += req.nextUrl.search
+			return NextResponse.redirect(
+				new URL(`/sign-in?from=${encodeURIComponent(from)}`, req.url),
+			)
 		}
-
-		return NextResponse.redirect(
-			new URL(`/sign-in?from=${encodeURIComponent(from)}`, req.url),
-		)
-	}
-}
+	},
+	{
+		callbacks: {
+			authorized: () => true,
+		},
+	},
+)
 
 export const config = {
 	matcher: ['/dashboard/:path*', '/sign-in', '/sign-up'],

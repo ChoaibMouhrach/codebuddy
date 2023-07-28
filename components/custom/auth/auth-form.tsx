@@ -16,6 +16,7 @@ import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation"
+import { useToast } from "@/components/ui/use-toast";
 
 const schema = z.object({
   email: z.string().email()
@@ -30,15 +31,39 @@ interface AuthFormProps {
 export default function AuthForm({ formType }: AuthFormProps) {
   const [isLoading, setIsLoading] = useState(false);
   const searchParams = useSearchParams();
+  const { toast } = useToast();
 
   const form = useForm<TData>({
     resolver: zodResolver(schema)
   })
 
-  const onSubmit = (data: TData) => {
+  const onSubmit = async ({ email }: TData) => {
     setIsLoading(true);
-    console.log(data)
-    setIsLoading(false);
+    const response = await signIn("email", {
+      email,
+      redirect: false,
+      callbackUrl: searchParams.get("from") ?? "/dashboard"
+    })
+
+    if (!response) {
+      setIsLoading(false);
+      return;
+    }
+
+    if (response.ok) {
+      toast({
+        title: "Yaay!",
+        description: "Check your email for the sign in link",
+      })
+    } else {
+      toast({
+        title: "Oops!",
+        description: response?.error,
+        variant: "destructive"
+      })
+    }
+
+    setIsLoading(false)
   }
 
   const handleGithub = () => {
@@ -74,7 +99,6 @@ export default function AuthForm({ formType }: AuthFormProps) {
             <Separator className="shrink flex-1" />
           </div>
           <Button type="button" variant="outline" onClick={handleGithub} > <FaGithubAlt className="mr-2" /> Github</Button>
-
           {
             formType === "sign-in" ? (
               <p className="text-muted-foreground text-center text-sm" >
