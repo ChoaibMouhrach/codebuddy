@@ -1,7 +1,7 @@
 import { inter, satoshi } from '@/styles/fonts'
 import './globals.css'
 import { cn } from '@/lib/utils'
-import NextProgressBar from '@/components/custom/next-progress-bar'
+import NextProgressBar from '@/components/custom/common/next-progress-bar'
 
 interface LayoutProps {
   children: React.ReactNode

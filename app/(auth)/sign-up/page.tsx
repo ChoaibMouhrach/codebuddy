@@ -1,4 +1,4 @@
-import AuthForm from "@/components/custom/auth-form"
+import AuthForm from "@/components/custom/auth/auth-form"
 import {
   Card,
   CardDescription,

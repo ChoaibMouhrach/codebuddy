@@ -1,6 +1,7 @@
 "use client";
 
-import { FaGoogle, FaGithubAlt } from "react-icons/fa"
+import { FaGithubAlt } from "react-icons/fa"
+import { signIn } from "next-auth/react";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { useForm } from "react-hook-form"
@@ -14,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation"
 
 const schema = z.object({
   email: z.string().email()
@@ -27,6 +29,7 @@ interface AuthFormProps {
 
 export default function AuthForm({ formType }: AuthFormProps) {
   const [isLoading, setIsLoading] = useState(false);
+  const searchParams = useSearchParams();
 
   const form = useForm<TData>({
     resolver: zodResolver(schema)
@@ -38,19 +41,16 @@ export default function AuthForm({ formType }: AuthFormProps) {
     setIsLoading(false);
   }
 
+  const handleGithub = () => {
+    signIn("github", {
+      callbackUrl: searchParams.get("from") ?? "/dashboard"
+    });
+  }
+
   return (
     <Form {...form} >
       <form onSubmit={form.handleSubmit(onSubmit)} >
         <CardContent className="flex flex-col gap-6" >
-          <div className="grid grid-cols-2 gap-4" >
-            <Button variant="outline" > <FaGithubAlt className="mr-2" /> Github</Button>
-            <Button variant="outline" > <FaGoogle className="mr-2" /> Google</Button>
-          </div>
-          <div className="flex items-center gap-4 " >
-            <Separator className="shrink flex-1" />
-            <p className="text-muted-foreground" >OR SIGN IN WITH</p>
-            <Separator className="shrink flex-1" />
-          </div>
           <FormField
             name="email"
             control={form.control}
@@ -63,16 +63,25 @@ export default function AuthForm({ formType }: AuthFormProps) {
               </FormItem>
             )}
           />
-        </CardContent>
-        <CardFooter className="flex flex-col gap-6" >
+
           <Button className="w-full" isLoading={isLoading} >Sign In</Button>
+
+        </CardContent>
+        <CardFooter className="flex flex-col gap-6 items-stretch" >
+          <div className="flex items-center gap-4 " >
+            <Separator className="shrink flex-1" />
+            <p className="text-sm text-muted-foreground" >OR SIGN IN WITH</p>
+            <Separator className="shrink flex-1" />
+          </div>
+          <Button type="button" variant="outline" onClick={handleGithub} > <FaGithubAlt className="mr-2" /> Github</Button>
+
           {
             formType === "sign-in" ? (
-              <p className="text-muted-foreground text-center" >
+              <p className="text-muted-foreground text-center text-sm" >
                 Don't have an account ? <Link href="/sign-up" className="text-white" >Sign Up</Link>
               </p>
             ) : (
-              <p className="text-muted-foreground text-center" >
+              <p className="text-muted-foreground text-center text-sm" >
                 Alreadt have an account ? <Link href="/sign-in" className="text-white" >Sign In</Link>
               </p>
             )
