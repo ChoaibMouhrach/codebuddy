@@ -4,7 +4,6 @@ import { getServerSession } from 'next-auth'
 
 export default async function Page() {
 	const session = await getServerSession(authOptions)
-
 	return (
 		<div>
 			<NavBar user={session?.user} />
