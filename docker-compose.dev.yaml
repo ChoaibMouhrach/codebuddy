@@ -1,0 +1,27 @@
+version: '3.3'
+services:
+  mysql:
+    image: mysql
+    volumes:
+      - mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=6003
+    healthcheck:
+      test: 'mysql -uroot -p6003'
+      interval: 1s
+      retries: 20
+
+  codebuddy:
+    build:
+      context: .
+    volumes:
+      - ./:/app
+    ports:
+      - 3000:3000
+    command: sh -c "pnpm prisma migrate dev && pnpm run dev"
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+volumes:
+  mysql:

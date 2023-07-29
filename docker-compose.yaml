@@ -1,4 +1,4 @@
-version: "3.3"
+version: '3.3'
 services:
   codebuddy:
     build: .
@@ -6,6 +6,4 @@ services:
     ports:
       - 3000:3000
     restart: always
-
-volumes:
-  app:
+    comman: npm run start
