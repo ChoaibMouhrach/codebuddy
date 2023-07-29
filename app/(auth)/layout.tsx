@@ -1,18 +1,21 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { BsArrowLeftShort } from "react-icons/bs";
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+import { BsArrowLeftShort } from 'react-icons/bs'
 
 interface LayoutProps {
-  children: React.ReactNode;
+	children: React.ReactNode
 }
 
 export default function Layout({ children }: LayoutProps) {
-  return (
-    <main className="h-screen w-screen flex items-center justify-center px-4 lg:px-0 relative" >
-      {children}
-      <Button className="absolute top-0 left-0 m-8" variant="secondary" asChild >
-        <Link href="/" className="flex items-center gap-2" > <BsArrowLeftShort className="text-lg" />  Home</Link>
-      </Button>
-    </main>
-  )
+	return (
+		<main className="relative flex h-screen w-screen items-center justify-center px-4 lg:px-0">
+			{children}
+			<Button className="absolute left-0 top-0 m-4" variant="secondary" asChild>
+				<Link href="/" className="flex items-center gap-2">
+					{' '}
+					<BsArrowLeftShort className="text-lg" /> Home
+				</Link>
+			</Button>
+		</main>
+	)
 }
