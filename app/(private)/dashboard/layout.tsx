@@ -28,7 +28,7 @@ export default function Layout({ children }: LayoutProps) {
 						isSideBarOpen={isSideBarOpen}
 						setIsSideBarOpen={setIsSideBarOpen}
 					/>
-					<div className="h-[calc(100vh_-_112px)] shrink-0 rounded-md bg-card p-4">
+					<div className="h-[calc(100vh_-_112px)] shrink-0 rounded-md flex flex-col gap-4 ">
 						{children}
 					</div>
 				</div>
