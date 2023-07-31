@@ -1,7 +1,7 @@
 'use client'
 
-import NavBar from '@/components/custom/private/dashboard/nav-bar'
-import SideBar from '@/components/custom/private/dashboard/side-bar'
+import NavBar from '@/components/custom/dashboard/navigation/nav-bar'
+import SideBar from '@/components/custom/dashboard/navigation/side-bar'
 
 import {
 	Sheet,
@@ -28,7 +28,7 @@ export default function Layout({ children }: LayoutProps) {
 						isSideBarOpen={isSideBarOpen}
 						setIsSideBarOpen={setIsSideBarOpen}
 					/>
-					<div className="h-[calc(100vh_-_112px)] shrink-0 rounded-md flex flex-col gap-4 ">
+					<div className="flex h-[calc(100vh_-_112px)] shrink-0 flex-col gap-4 rounded-md ">
 						{children}
 					</div>
 				</div>

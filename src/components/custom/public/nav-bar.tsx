@@ -2,8 +2,8 @@
 
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import Logo from '../common/logo'
-import AvatarDropDown from '../common/avatar-dropdown'
+import Logo from '@/components/custom/shared/logo'
+import AvatarDropDown from '@/components/custom/shared/avatar-dropdown'
 
 interface NavBarProps {
 	user?: Partial<{

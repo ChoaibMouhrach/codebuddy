@@ -5,7 +5,7 @@ services:
     volumes:
       - mysql:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=6003
+      MYSQL_ROOT_PASSWORD: 6003
     healthcheck:
       test: 'mysql -uroot -p6003'
       interval: 1s

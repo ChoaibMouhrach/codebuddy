@@ -1,5 +1,5 @@
-import Logo from '@/components/custom/common/logo'
-import AvatarDropDown from '../../common/avatar-dropdown'
+import Logo from '@/components/custom/shared/logo'
+import AvatarDropDown from '@/components/custom/shared/avatar-dropdown'
 import { Button } from '@/components/ui/button'
 import { MdOutlineMenu } from 'react-icons/md'
 import React from 'react'
