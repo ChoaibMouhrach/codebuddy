@@ -82,7 +82,7 @@
 		--accent: 210 40% 96.1%;
 		--accent-foreground: 222.2 47.4% 11.2%;
 
-		--ring: 215 20.2% 65.1%;
+		--ring: 261.6deg 51.87%;
 
 		--radius: 0.5rem;
 	}
@@ -115,13 +115,13 @@
 		--destructive: 0 62.8% 30.6%;
 		--destructive-foreground: 0 85.7% 97.3%;
 
-		--ring: 217.2 32.6% 17.5%;
+		--ring: 258 88% 57.5%;
 	}
 }
 
 @layer base {
 	* {
-    @apply border-border;
+		@apply border-border;
 	}
 
 	body {

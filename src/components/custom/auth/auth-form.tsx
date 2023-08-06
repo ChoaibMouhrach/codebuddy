@@ -95,30 +95,38 @@ export default function AuthForm({ formType }: AuthFormProps) {
 						)}
 					/>
 
-					<Button className="w-full" isLoading={isLoading}>
-						Sign In
+					<Button
+						className="w-full rounded-lg bg-gradient-to-t from-primary-800 to-primary-500 px-4 py-2 text-lg font-semibold"
+						isLoading={isLoading}
+					>
+						Continue
 					</Button>
 				</CardContent>
 				<CardFooter className="flex flex-col items-stretch gap-6">
 					<div className="flex items-center gap-4 ">
 						<Separator className="flex-1 shrink" />
-						<p className="text-sm text-muted-foreground">OR SIGN IN WITH</p>
+						<p className="text-sm text-white/80">or sign in with</p>
 						<Separator className="flex-1 shrink" />
 					</div>
-					<Button type="button" variant="outline" onClick={handleGithub}>
+					<Button
+						type="button"
+						variant="outline"
+						onClick={handleGithub}
+						className='"w-full rounded-lg bg-gradient-to-t from-primary-800 to-primary-500 px-4 py-2 text-lg font-semibold'
+					>
 						{' '}
 						<FaGithubAlt className="mr-2" /> Github
 					</Button>
 					{formType === 'sign-in' ? (
-						<p className="text-center text-sm text-muted-foreground">
+						<p className="text-center text-sm text-white/80">
 							Don&apos;t have an account ?{' '}
 							<Link href="/sign-up" className="text-white">
 								Sign Up
 							</Link>
 						</p>
 					) : (
-						<p className="text-center text-sm text-muted-foreground">
-							Alreadt have an account ?{' '}
+						<p className="text-center text-sm text-white/80">
+							Already have an account ?{' '}
 							<Link href="/sign-in" className="text-white">
 								Sign In
 							</Link>
